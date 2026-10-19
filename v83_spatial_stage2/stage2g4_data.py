@@ -110,6 +110,8 @@ def load_event_split(directory):
             "episode_id", "band", "step", "action", "stop", "distance_m",
             "target_visible", "target_localizable", "near_target_invisible",
             "current_features", "since_localizable", "until_next_localizable",
+            "oracle_move_action", "heading_error_deg", "goal_half_size_px",
+            "goal_visible_geom",
         )
     }
     for path in files:
@@ -125,6 +127,8 @@ def load_event_split(directory):
         for key in (
             "step", "action", "stop", "distance_m", "target_visible",
             "target_localizable", "near_target_invisible",
+            "oracle_move_action", "heading_error_deg", "goal_half_size_px",
+            "goal_visible_geom",
         ):
             parts[key].append(np.asarray(data[key]))
         parts["current_features"].append(
